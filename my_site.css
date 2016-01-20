@@ -1,3 +1,11 @@
 div.nav li {
 	display: inline;
 }
+
+#slideshow {
+	width: 100%;
+	height: 500px;
+	background-image: url('https://www.jbs.cam.ac.uk/filedmin/_processed_/csm_cjbs-staircases-883x432_ef6dd9b96b.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+}

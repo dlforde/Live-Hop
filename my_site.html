@@ -1,31 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
 
 	<head>
 
-		<title>Live Hop</title>
-		<meta charset="utf-8">
-		<base href="http://elreveel.me.uk">
-		<link rel="stylesheet" href="/my_site.css">
+		<title>Live-Hop</title>
+		<meta charset = "utf-8">
+		<base href = "http://elreveel.me.uk">
+		<link rel = "stylesheet" href = "/my_site.css">
 		<!-- add favicon -->
 		
 		<!-- link stylesheet -->
 		<!-- class as homepage? -->
+        <script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <script type="text/javascript">
+	
+	        $(document).ready(function() {          
+	  
+	            var i = 0;
+
+                var images = [
+			        'http://media-cdn.tripadvisor.com/media/photo-s/02/c3/d1/eb/hughes-hall.jpg',
+	                'https://www.jbs.cam.ac.uk/filedmin/_processed_/csm_cjbs-staircases-883x432_ef6dd9b96b.jpg'
+				    ];
+
+	            var image = $('#slideshow');
+
+	                //Initial Background image setup
+
+	            image.css('background-image', 'url("https://www.jbs.cam.ac.uk/filedmin/_processed_/csm_cjbs-staircases-883x432_ef6dd9b96b.jpg")';
+
+	                //Change image at regular intervals
+
+	            setInterval(function(){  
+
+	                image.fadeOut(1000, function () {
+
+	                   image.css('background-image', 'url(" + images[i++] +")');
+
+	                   image.fadeIn(1000);
+
+	                });
+
+	                if(i == images.length) {
+
+	                    i = 0;
+
+	                };
+				
+	            }, 5000);           
+
+	        });
+
+	    </script>
 
 	</head>
 
 
 	<body>
-		<div class="wrap_all">
-			<div class="nav">
+
+		<div class = "wrap_all">
+
+			<div class = "nav">
 				<ul>
-					<a href=""><li>Logo</li></a>
-					<a href=""><li>We</li></a>
-					<a href=""><li>Love</li></a>
-					<a href=""><li>Hip</li></a>
-					<a href=""><li>Hop</li></a>
+					<a href = ""><li>Logo</li></a>
+					<a href = ""><li>We</li></a>
+					<a href = ""><li>Love</li></a>
+					<a href = ""><li>Hip</li></a>
+					<a href = ""><li>Hop</li></a>
 				</ul>
 			</div>
+
+			<div id = "slideshow">
+			</div>
+
 		</div>
 	</body>
 
