@@ -1,11 +1,55 @@
+/* div {
+	border: 2px solid black;
+} */
+
+
 div.nav li {
 	display: inline;
+	font-size: 2em;
+	padding: 10px 8px 10px 8px;
 }
 
 #slideshow {
-	width: 100%;
-	height: 500px;
-	background-image: url('https://www.jbs.cam.ac.uk/filedmin/_processed_/csm_cjbs-staircases-883x432_ef6dd9b96b.jpg');
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    min-height: 630px;
+    width: 100%;
+	background-image: url('http://media-cdn.tripadvisor.com/media/photo-s/02/c3/d1/eb/hughes-hall.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.slideshowTint {
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.taglineContainerTable {
+	display: table;
+	min-height: 526px;
+}
+
+.taglineContainer {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.tagline h2 {
+	font-family: 'Raleway', sans-serif;
+    font-size: 3.125em;
+    font-weight: 400;
+    line-height: 1em;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 0 10px;
+}
+
+.spacer {
+	min-height: 52px;
 }

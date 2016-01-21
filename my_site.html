@@ -8,39 +8,38 @@
 		<base href = "http://elreveel.me.uk">
 		<link rel = "stylesheet" href = "/my_site.css">
 		<!-- add favicon -->
-		
-		<!-- link stylesheet -->
 		<!-- class as homepage? -->
-        <script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-        <script type="text/javascript">
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Raleway">
+        <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <script type = "text/javascript">
 	
+			// create slideshow	
 	        $(document).ready(function() {          
 	  
 	            var i = 0;
 
                 var images = [
-			        'http://media-cdn.tripadvisor.com/media/photo-s/02/c3/d1/eb/hughes-hall.jpg',
-	                'https://www.jbs.cam.ac.uk/filedmin/_processed_/csm_cjbs-staircases-883x432_ef6dd9b96b.jpg'
+	                'https://www.jbs.cam.ac.uk/fileadmin/user_upload/research/centres/social-innovation/carousels/csi-contact-us-883x432.jpg',
+	                'http://media-cdn.tripadvisor.com/media/photo-s/02/c3/d1/eb/hughes-hall.jpg'
 				    ];
 
-	            var image = $('#slideshow');
+	            var slideshow = $('#slideshow');
 
-	                //Initial Background image setup
 
-	            image.css('background-image', 'url("https://www.jbs.cam.ac.uk/filedmin/_processed_/csm_cjbs-staircases-883x432_ef6dd9b96b.jpg")';
+	            setInterval(function() {  
 
-	                //Change image at regular intervals
+	                slideshow.fadeOut(1000, function() {
 
-	            setInterval(function(){  
+	                   slideshow.css("background-image", 'url(' + images[i] +')');
 
-	                image.fadeOut(1000, function () {
+	                   slideshow.fadeIn(500);
 
-	                   image.css('background-image', 'url(" + images[i++] +")');
-
-	                   image.fadeIn(1000);
+	                   i++
 
 	                });
+
 
 	                if(i == images.length) {
 
@@ -52,6 +51,15 @@
 
 	        });
 
+	        $(window).scroll(function() {
+	        	$(".tagline").fadeOut(1000);
+	        });
+
+	        //create pop-up boxes
+	        $(".main-wrap").click(function() {
+	        	$("this").hide();
+	        })
+
 	    </script>
 
 	</head>
@@ -59,7 +67,7 @@
 
 	<body>
 
-		<div class = "wrap_all">
+		<div class = "wrapAll">
 
 			<div class = "nav">
 				<ul>
@@ -71,10 +79,30 @@
 				</ul>
 			</div>
 
+			<!-- slideshow -->
 			<div id = "slideshow">
+				<div class = "slideshowTint">
+				</div>
+			</div>
+
+			<div class = "taglineContainerTable">
+				<div class = "taglineContainer">
+					<div class = "tagline">
+						<h2>A knowledge hub for innovation and digital transformation</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class = "spacer">
 			</div>
 
 		</div>
+
+		<div class = "wrap-all">
+			<img src = "http://www.dilla.biz/images/KIDDILLA.jpg" alt = "J Dilla">
+		</div>
+
+
 	</body>
 
 <html>
